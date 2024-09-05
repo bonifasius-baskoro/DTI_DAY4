@@ -9,8 +9,15 @@ public class Task5 {
         String userString = userInput1.nextLine();
         StringBuilder stringInput =  new StringBuilder(userString);
 
-        System.out.println(Character.isUpperCase(stringInput.charAt(1)));
-        stringInput.setCharAt(2,'a');
+        for (int i = 0; i <stringInput.length(); i++){
+            if(Character.isUpperCase(stringInput.charAt(i))){
+                stringInput.setCharAt(i,Character.toLowerCase(stringInput.charAt(i)));
+            }
+            else{
+                stringInput.setCharAt(i,Character.toUpperCase(stringInput.charAt(i)));
+            }
+        }
+        System.out.println(stringInput.toString());
         }
 }
 

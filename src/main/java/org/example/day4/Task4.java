@@ -18,15 +18,24 @@ public class Task4 {
             int userGuess =Integer.parseInt(userInput.nextLine());
             if( userGuess< random1){
                 System.out.println("Too low!");
+                guess++;
             }
             else if(userGuess > random1){
                 System.out.println("Too high!");
+                guess++;
             }
             else{
-                System.out.println("You are right");
+                System.out.println("You are right in "+  guess + " guesses");
                 isTrue = true;
-
+                break;
             }
+            System.out.println("Do you want to give up (y/n)?");
+            String userGuess2 = userInput.nextLine();
+            if(userGuess2.equalsIgnoreCase("y")){
+                System.out.println("You don't have any spirit, this is the answer :" + random1 ) ;
+                break;
+            }
+
         }while (!isTrue);
     }
 }
